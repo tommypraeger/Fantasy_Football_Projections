@@ -9,6 +9,7 @@ library(jsonlite)
 library(data.table)
 library(httr)
 
+
 ### Create the main function.
     # Week = 0 Implies the Preseason Draft Rankikngs
 Fantasy_Football_Projections <- function(sources = c("CBS", "ESPN", "FantasySharks", "Sleeper", "Yahoo", "FantasyPros"), Week, Season, Scoring = c("PPR", "Standard", "Custom"), VOR = c("Standard", "Custom")) {
