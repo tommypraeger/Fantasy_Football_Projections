@@ -1,8 +1,8 @@
-library(mclust)
+### Tier Function comes from FFAnalytics
 
+library(mclust)
 ### Set Thresholds and Tier Groups
-scoreThreshold <- c(QB = 10, RB = 10, WR = 10, TE = 7, K = 7, DST = 5, DL = 10, LB = 10, DB = 10)
-#tierGroups <- c(QB = 10, RB = 10, WR = 10, TE = 7, K = 7, DST = 5, DL = 10, LB = 10, DB =10)
+scoreThreshold <- c(QB = 10, RB = 10, WR = 10, TE = 7, K = 7, DST = 5)
 
 ### Create Functions
 setTier <- function(points, position){
