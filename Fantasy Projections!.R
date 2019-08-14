@@ -3,7 +3,6 @@
 # Use the VOR and League Scoring Documents to set up the information for your league! 
 ###
 
-
 ### Load the Functions
 source(paste0(getwd(), '/Projections_Main.R'))
 
