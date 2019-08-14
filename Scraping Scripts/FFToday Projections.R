@@ -1,0 +1,10 @@
+qb1_fftoday <- getURL("https://www.fftoday.com/rankings/playerproj.php?PosID=10&LeagueID=107644")
+qb1_fftoday <- readHTMLTable(qb1_fftoday, stringsAsFactors = FALSE)[11]$'NULL'
+qb2_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?Season=2014&PosID=10&LeagueID=1&order_by=FFPts&sort_order=DESC&cur_page=1", stringsAsFactors = FALSE)[11]$'NULL'
+rb1_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?PosID=20&LeagueID=1", stringsAsFactors = FALSE)[11]$'NULL'
+rb2_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?Season=2014&PosID=20&LeagueID=1&order_by=FFPts&sort_order=DESC&cur_page=1", stringsAsFactors = FALSE)[11]$'NULL'
+wr1_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?PosID=30&LeagueID=1", stringsAsFactors = FALSE)[11]$'NULL'
+wr2_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?Season=2014&PosID=30&LeagueID=1&order_by=FFPts&sort_order=DESC&cur_page=1", stringsAsFactors = FALSE)[11]$'NULL'
+wr3_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?Season=2014&PosID=30&LeagueID=1&order_by=FFPts&sort_order=DESC&cur_page=2", stringsAsFactors = FALSE)[11]$'NULL'
+te1_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?PosID=40&LeagueID=1", stringsAsFactors = FALSE)[11]$'NULL'
+te2_fftoday <- getURL("http://www.fftoday.com/rankings/playerproj.php?Season=2014&PosID=40&LeagueID=1&order_by=FFPts&sort_order=DESC&cur_page=1", stringsAsFactors = FALSE)[11]$'NULL'
