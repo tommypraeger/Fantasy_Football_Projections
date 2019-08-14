@@ -12,19 +12,21 @@ ESPN_JSON <- fromJSON("https://fantasy.espn.com/apis/v3/games/ffl/seasons/2019/s
 
 ### Separate the projections
 espn_stat_projections <- ESPN_JSON[["players"]][["player"]][["stats"]]
-espn_stat_projections <- espn_stat_projections[!sapply(espn_stat_projections, is.null)]
-espn_stat_projections_placeholder <- data.frame(espn_stat_projections[[1]]) 
+#espn_stat_projections <- espn_stat_projections[!sapply(espn_stat_projections, is.null)]
+espn_stat_projections_placeholder <- data.frame(espn_stat_projections[[1]])
+espn_stat_projections_placeholder_placeholder <- espn_stat_projections_placeholder
 espn_stat_projections_placeholder <- cbind(espn_stat_projections_placeholder, espn_stat_projections_placeholder$stats)
 espn_stat_projections_placeholder <- espn_stat_projections_placeholder %>% select(-c(stats))
 espn_stat_projections_player <- espn_stat_projections_placeholder %>%
   filter(id == "102019")
 
-
-
 # Loop through to get the projections into one dataset
 players <- as.numeric(length(espn_stat_projections))
 for(i in 2:players) { 
   espn_stat_projections_placeholder <- data.frame(espn_stat_projections[[i]])
+  if(is_empty(espn_stat_projections_placeholder) == TRUE){espn_stat_projections_placeholder <- data.frame(matrix(ncol = 10, nrow = 1))
+  colnames(espn_stat_projections_placeholder) <- colnames(espn_stat_projections_placeholder_placeholder)
+  espn_stat_projections_placeholder$id <- "102019"}
   espn_stat_projections_placeholder <- cbind(espn_stat_projections_placeholder, espn_stat_projections_placeholder$stats)
   espn_stat_projections_placeholder <- espn_stat_projections_placeholder %>% select(-c(stats))
   espn_stat_projections_placeholder <-  espn_stat_projections_placeholder %>%
@@ -97,6 +99,6 @@ ESPN_Projections <- ESPN_Projections %>%
 if(week == 0){week_no <- paste0("Draft")}
 if(week > 0){week_no <- paste0(week)}
 assign(paste0("ESPN_Projections"), ESPN_Projections)
-rm(espn_stat_projections, espn_stat_projections_placeholder, espn_stat_projections_player, ESPN_JSON, espn_teamid_key, espn_positionid_key)
+rm(espn_stat_projections, espn_stat_projections_placeholder, espn_stat_projections_player, ESPN_JSON, espn_teamid_key, espn_positionid_key, espn_stat_projections_placeholder_placeholder)
 
 
