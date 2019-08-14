@@ -36,3 +36,7 @@ Combined_Projections$FGM.XP <- as.numeric(Combined_Projections$FGM.XP)
 Combined_Projections$FGM.1_39 <- as.numeric(Combined_Projections$FGM.1_39)
 Combined_Projections$FGM.40_49 <- as.numeric(Combined_Projections$FGM.40_49)
 Combined_Projections$FGM.50. <- as.numeric(Combined_Projections$FGM.50.)
+
+### Change Mitchell Trubisky
+Combined_Projections <- as.data.table(Combined_Projections)
+Combined_Projections[which(Combined_Projections$Player == "Mitch Trubisky"), Player := "Mitchell Trubisky"]
