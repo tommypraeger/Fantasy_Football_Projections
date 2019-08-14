@@ -1,2 +1,2 @@
 rm(i, pages, players, season, week, week_no, yahoo_url, VOR, substrRight, CBS_Projections, Custom, PPR, Standard, simpleCap, Scoring, Yahoo_Projections, ESPN_Projections, FantasyPros_Projections, Sleeper_Projections, FantasySharks_Projections)
-rm(Combined_Projections, Average_Fantasy_Projections)
+rm(Combined_Projections)
