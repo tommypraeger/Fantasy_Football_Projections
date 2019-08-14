@@ -5,3 +5,5 @@ Average_Fantasy_Projections <- as.data.table(Average_Fantasy_Projections)
 Average_Fantasy_Projections[which(Value.Rank <= 33), Cost := Average.Auction.Value * 1.1]
 Average_Fantasy_Projections[which(Value.Rank >= 34 & Average_Fantasy_Projections$Value.Rank <= 66), Cost := Average.Auction.Value]
 Average_Fantasy_Projections[which(Value.Rank >= 67), Cost := Average.Auction.Value * 0.9]
+Average_Fantasy_Projections[which(Cost <1), Cost := 1]
+Average_Fantasy_Projections$Cost <- ceiling(Average_Fantasy_Projections$Cost, 0)
